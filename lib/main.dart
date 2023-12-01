@@ -1,10 +1,10 @@
 /*
 
   About Academy
-    Home ( Academy Welcome Message & Faculties )
     Faculty Details ( About & Submit button )
     About Academy ( Message, Vision, Mission, Location, Contact Us )
     Teachers ( List of teaches with pics, short bio )
+    Login Screen
 
 
 */
