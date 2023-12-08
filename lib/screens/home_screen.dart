@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_services/dummy_data.dart';
+import 'package:i_services/screens/faculty_details_screen.dart';
 import 'package:i_services/shared/shared_theme/shared_colors.dart';
 import 'package:i_services/shared/shared_theme/shared_fonts.dart';
 
@@ -15,14 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: SharedColors.primaryColor,
-        title: Text(
-          'Welcome!',
-          style: SharedFonts.primaryFontWhiteColor
-        ),
-        centerTitle: true,
-      ),
       body: Container(
         margin: EdgeInsets.all(10.0),
         child: ListView(
@@ -103,36 +96,42 @@ class _HomeScreenState extends State<HomeScreen> {
         scrollDirection: Axis.vertical,
         children: [
           for (int i = 0; i < facultyData.length; i++)
-          Container(
-            margin: EdgeInsets.all(5.0),
-            decoration: BoxDecoration(
-              border: Border.all(color: SharedColors.greyColor, width: 1.0),
-              borderRadius: BorderRadius.circular(20.0)
-            ),
-            padding: EdgeInsets.all(5.0),
-            child: Column(
-              children: [
-                Container(
-                  height: 115.0,
-                  width: 145,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(facultyData[i]['img']!),
-                      fit: BoxFit.fill
+          InkWell(
+            onTap: () {
+              // Navigator.pushNamed(context, 'about');
+              Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyDetailsScreen(facultyData[i]['title']!)));
+            },
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: SharedColors.greyColor, width: 1.0),
+                borderRadius: BorderRadius.circular(20.0)
+              ),
+              padding: EdgeInsets.all(5.0),
+              child: Column(
+                children: [
+                  Container(
+                    height: 115.0,
+                    width: 145,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(facultyData[i]['img']!),
+                        fit: BoxFit.fill
+                      ),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0))
                     ),
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0))
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10.0),
-                  padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: Colors.grey.shade100
-                  ),
-                  child: Text(facultyData[i]['title']!, style: SharedFonts.miniFontPrimaryColor),
-                )
-              ],
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0),
+                    padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.grey.shade100
+                    ),
+                    child: Text(facultyData[i]['title']!, style: SharedFonts.miniFontPrimaryColor),
+                  )
+                ],
+              ),
             ),
           ),
         ],

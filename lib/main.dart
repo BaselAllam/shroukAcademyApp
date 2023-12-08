@@ -1,17 +1,41 @@
 /*
 
-  About Academy
-    Faculty Details ( About & Submit button )
-    About Academy ( Message, Vision, Mission, Location, Contact Us )
-    Teachers ( List of teaches with pics, short bio )
+    Faculty Details ( About & Submit button & Teachers ( List of teaches with pics, short bio ) )
     Login Screen
 
 
+    Next Session
+      => Faculty Details
+      => Input & Fields
+      => Buttons
+
+    Next Session
+      => Dialog 
+      => Integrate Google Maps
+      => Integrate Firebase
+      => Front-end & Back-end & API
+
+    Next Session
+      => Intro To State Managment
+      => Difference Between Approaches
+
+    Next Session
+      => Implement API
+      => Implement State Managment
+
+    Next Session
+      => Continue with API & State Managment
+      => Responsive Screens
+      => Releasing APK 
+
+    Next Session 
+      => Say Good Bye
+    
 */
 
 
 import 'package:flutter/material.dart';
-import 'package:i_services/screens/home_screen.dart';
+import 'package:i_services/screens/bottom_navigation_screen.dart';
 
 
 void main() {
@@ -26,7 +50,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: BottomNavigationScreen(),
+      // routes: {
+      //   'home': (context) => HomeScreen(),
+      //   'about': (context) => AboutAcademyScreen(),
+      // },
     );
   }
 }
