@@ -1,16 +1,6 @@
 /*
 
-    Faculty Details ( About & Submit button & Teachers ( List of teaches with pics, short bio ) )
-    Login Screen
-
-
     Next Session
-      => Faculty Details
-      => Input & Fields
-      => Buttons
-
-    Next Session
-      => Dialog 
       => Integrate Google Maps
       => Integrate Firebase
       => Front-end & Back-end & API
@@ -36,6 +26,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:i_services/screens/bottom_navigation_screen.dart';
+import 'package:i_services/screens/login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 void main() {
@@ -44,17 +36,42 @@ void main() {
 
 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  bool isLogged = false;
+
+  @override
+  void initState() {
+    verify();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationScreen(),
-      // routes: {
-      //   'home': (context) => HomeScreen(),
-      //   'about': (context) => AboutAcademyScreen(),
-      // },
+      home: isLogged ? BottomNavigationScreen() : LoginScreen(),
     );
+  }
+
+  verify() async {
+    try {
+      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+      bool? logged = sharedPreferences.getBool('isLoggedIn');
+      setState(() {
+        isLogged = logged!;
+      });
+    } catch (e) {
+      setState(() {
+        isLogged = false;
+      });
+    }
   }
 }

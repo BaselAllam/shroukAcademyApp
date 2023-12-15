@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
           for (int i = 0; i < facultyData.length; i++)
           InkWell(
             onTap: () {
-              // Navigator.pushNamed(context, 'about');
               Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyDetailsScreen(facultyData[i]['title']!)));
             },
             child: Container(

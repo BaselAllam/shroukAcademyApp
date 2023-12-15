@@ -44,3 +44,35 @@ It is with my pleasure and deep appreciation that I would like to address you an
 My dear students, our ambition to support, qualify, and care for you is great and has no limits. We bear upon ourselves the necessity of meeting your desires in accordance with the needs of society and the requirements of sustainable development, improving the quality of life, achieving well-being for all, and preserving natural resources and sustaining them for future generations. Therefore, rules have been set for the quality of the educational process with emphasis. On the modern study plans and programs that keep pace with scientific developments and developments, which resulted in the Higher Institute of Engineering obtaining accreditation from the National Authority for Quality Assurance and Accreditation of Education as the first private institute at the level of private higher institutes and the first engineering institute at the level of private universities. I wish all of you, children, good luck and success, and be on the best of luck. I have complete confidence that Al-Shorouk Academy will bear all its responsibilities towards you, and you must do your best to acquire knowledge and be keen on learning...'''
   },
 ];
+
+
+List<Map<String, String>> departmentData = [
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+  {
+    'img': 'https://hie.sha.edu.eg/images/logos/physics.jpg',
+    'txt': 'Department of Mathematics and Engineering Physics'
+  },
+];
