@@ -76,3 +76,81 @@ List<Map<String, String>> departmentData = [
     'txt': 'Department of Mathematics and Engineering Physics'
   },
 ];
+
+
+/*
+
+
+  Informational Data
+    => Personal Info
+    => Companoeis Info
+    => Gov Info
+
+
+  Operational Data ( Any Event 'Actions' Made on the System )
+
+
+  Data => Storage
+            => Low ( Tv, Home Appliance, Self Driving Car ) 
+            => Medium ( Perosnal PCs, Personal Laptops, Personal Mpbile Phone, Smart Watch )
+            => Big ( Servers, Cloud Computing )
+
+
+  Data => Process
+            => Dev ( CLI )
+            => EndUsers ( GUI )
+                => Admins
+                => Staff
+                => User
+
+       >>> * Send Data * >>>
+  Server => Web Service => Network => Database => Back-end Tech => Front-end => UI & UX
+       <<< * Recieve Data * <<<
+
+       Servers => Windows & Linux
+       Web Services => Ngnix & Apache 
+       Network 
+       Databases => 1- SQL " Relationble Database " ( DBMS ) Database Management Systems
+                      - MySQL
+                      - OracleSQL
+                      - PostgreSQL
+                      - SQLlite
+                 => 2- NoSQL " Documented " {} Collections ( List of Maps ) Documents 
+                      - MongoDB
+                      - Firebase
+       Back-end Tech => Programming Language + Framework
+                      - Python ( Django )
+                      - PHP ( Laravel )
+                      - Ruby ( Ruby on Rails )
+                      - Java ( Spring )
+                      - JS ( Node )
+                      - C# ( .Net & AspCore )
+
+
+        API => Application Programe Interface 
+          => Each APIs => Collection of EndPoints
+            => Each EndPoints is responsible about excuting func, this fun hosted on server
+              - Func hosted server developed by Back-end Developer
+              - Server ( IpAdress ) ' Domain Name '
+              - SUBURL/SubURL/excute
+              URL => noon.com/eg/products/iphone
+          => WebPage ( Protocol HTTP )
+          
+          => Request => 
+              - HTTP
+              - URL ( domain, fullPath )
+              - Method ( Post, Get, Put, Delete )
+              - Body ( Data ) | ( JSON , XML )
+
+          => Response => 
+              - HTTP
+              - Status Code
+              - Body
+
+          API Documentation
+
+          Send => Object to JSON ( encode )
+          Get => JSON to Object ( decode )
+
+
+*/

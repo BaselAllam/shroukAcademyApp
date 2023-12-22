@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "116592479682",
+    "project_id": "shroukacademy-e3831",
+    "storage_bucket": "shroukacademy-e3831.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116592479682:android:e8ff4ebf8886dad7925a5b",
+        "android_client_info": {
+          "package_name": "com.example.i_services"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXhvxNTh8TAqHz8jGLPqj8BgO19rva8vQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

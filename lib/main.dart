@@ -1,11 +1,6 @@
 /*
 
     Next Session
-      => Integrate Google Maps
-      => Integrate Firebase
-      => Front-end & Back-end & API
-
-    Next Session
       => Intro To State Managment
       => Difference Between Approaches
 
@@ -20,6 +15,7 @@
 
     Next Session 
       => Say Good Bye
+      => Simple Products APP ( Graduation )
     
 */
 
