@@ -1,10 +1,6 @@
 /*
 
     Next Session
-      => Intro To State Managment
-      => Difference Between Approaches
-
-    Next Session
       => Implement API
       => Implement State Managment
 

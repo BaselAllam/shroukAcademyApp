@@ -154,3 +154,38 @@ List<Map<String, String>> departmentData = [
 
 
 */
+
+
+/*
+
+  - What's State Management
+    - UI = data * deisgn
+
+    event => process => state => redsign screen
+
+    callMethod => cubit => states => emit
+
+    ScopedModel & Provider => notifyListener()
+
+
+  - Differnece Between Approaches 
+    - Low Level State
+    - Approaches 
+
+  - BLoC
+
+    => Business Logic Component ( Model View Controller )
+
+    >>> Core Concpet:
+    => 1- Cubit => the class that acts as controller that contains all logic related to this APP ( Module )
+    => 2- Bussiness => the model that responsible to save all data
+    => 3- States => state for each change that occur inside the cubit methods
+
+    >>> Built in Widget: 
+    => 1- Cubit => the class that the Controller inherit from to act as a Cubit
+    => 2- BlocProvider => the widget that will be on the top of app widget tree, that uses to initiate a new object of the cubit once the app started,
+                            and the cubit must only has a one object in memory
+    => 3- BlocBuilder | BlocListener => the parent widget for each listener widget
+    => 4- States => just an abstract class that acts as a parent for all process states
+
+*/
