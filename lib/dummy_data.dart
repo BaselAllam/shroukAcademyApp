@@ -189,3 +189,19 @@ List<Map<String, String>> departmentData = [
     => 4- States => just an abstract class that acts as a parent for all process states
 
 */
+
+
+/*
+
+  1- Analysis
+  2- Design Pattern
+    a- Models
+    b- Cubits
+    c- CRUD Operations
+    d- States
+  3- Implement Design With State Management
+  4- Testing
+  5- Release
+
+
+*/

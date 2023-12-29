@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:i_services/dummy_data.dart';
 import 'package:i_services/screens/apply_screen.dart';
 import 'package:i_services/shared/shared_theme/shared_colors.dart';
 import 'package:i_services/shared/shared_theme/shared_fonts.dart';
@@ -7,8 +6,8 @@ import 'package:i_services/shared/shared_theme/shared_fonts.dart';
 
 
 class FacultyDetailsScreen extends StatefulWidget {
-  final String title;
-  const FacultyDetailsScreen(this.title);
+  final Map<String, dynamic> data;
+  const FacultyDetailsScreen(this.data);
 
   @override
   State<FacultyDetailsScreen> createState() => _FacultyDetailsScreenState();
@@ -19,7 +18,7 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${widget.title} Details', style: SharedFonts.subFontPrimaryColor),
+        title: Text('${widget.data['facultyName']} Details', style: SharedFonts.subFontPrimaryColor),
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
@@ -86,7 +85,7 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
                   image: DecorationImage(
-                    image: NetworkImage('https://hie.sha.edu.eg/images/461308500_sha-5.jpg'),
+                    image: NetworkImage(widget.data['facultyImg']),
                     fit: BoxFit.fill
                   )
                 ),
@@ -94,14 +93,14 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
               Container(
                 width: MediaQuery.of(context).size.width - 190,
                 child: ListTile(
-                  title: Text('Introduction to the institute and programs', style: SharedFonts.subFontPrimaryColor),
+                  title: Text(widget.data['descTitle'], style: SharedFonts.subFontPrimaryColor),
                 )
               )
             ],
           ),
           ListTile(
             title: Text(
-              '''The Higher Institute of Engineering was established in 1995 by Ministerial Resolution issued by the Ministry of Higher Education No. 1712 dated 11/22/1995.....''',
+              widget.data['descSubtitle'],
               style: SharedFonts.miniFontSecondaryColor,
             ),
           )
@@ -119,7 +118,7 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
           childAspectRatio: 1.1
         ),
         physics: NeverScrollableScrollPhysics(),
-        itemCount: departmentData.length,
+        itemCount: widget.data['departments'].length,
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.all(10.0),
@@ -130,8 +129,8 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.network(departmentData[index]['img']!, height: 75.0, width: 75.0),
-                Text(departmentData[index]['txt']!, textAlign: TextAlign.center, style: SharedFonts.miniFontPrimaryColor)
+                Image.network(widget.data['departments'][index]['depImg']!, height: 75.0, width: 75.0),
+                Text(widget.data['departments'][index]['depName']!, textAlign: TextAlign.center, style: SharedFonts.miniFontPrimaryColor)
               ],
             ),
           );
@@ -145,7 +144,7 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
       height: 320.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        itemCount: widget.data['successStories'].length,
         itemBuilder: (context, index) {
           return Container(
             width: 200.0,
@@ -162,16 +161,16 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
                     image: DecorationImage(
-                      image: NetworkImage('https://hie.sha.edu.eg/upload/honorable/55048849_9.jpg'),
+                      image: NetworkImage(widget.data['successStories'][index]['personImg']),
                       fit: BoxFit.fill
                     )
                   ),
                 ),
                 SizedBox(height: 10.0),
-                Text('ENG: Mohamed Abel Aziz', style: SharedFonts.miniFontPrimaryColor),
+                Text(widget.data['successStories'][index]['personName'], style: SharedFonts.miniFontPrimaryColor),
                 Padding(
                   padding: const EdgeInsets.all(5.0),
-                  child: Text('Honoring engineer Ahmed Barakat Hassan Ibrahim Director of the Electromechanical Department at MI International Company', style: SharedFonts.miniFontSecondaryColor),
+                  child: Text(widget.data['successStories'][index]['personSubtitle'], style: SharedFonts.miniFontSecondaryColor),
                 ),
               ],
             ),

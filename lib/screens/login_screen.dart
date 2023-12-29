@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i_services/cubits/navigation_cubit.dart';
 import 'package:i_services/screens/bottom_navigation_screen.dart';
 import 'package:i_services/shared/shared_theme/shared_colors.dart';
 import 'package:i_services/shared/shared_theme/shared_fonts.dart';
@@ -75,6 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   } else {
                     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
                     sharedPreferences.setBool('isLoggedIn', true);
+                    BlocProvider.of<NavigationCubit>(context).initCubit();
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => BottomNavigationScreen()));
                   }
                 },
