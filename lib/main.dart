@@ -1,15 +1,3 @@
-/*
-
-    Next Session
-      => Continue with API & State Managment
-      => Responsive Screens
-      => Releasing APK 
-
-    Next Session 
-      => Say Good Bye
-      => Simple Products APP ( Graduation )
-    
-*/
 
 
 import 'package:flutter/material.dart';

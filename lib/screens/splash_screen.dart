@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: FutureBuilder(
         future: verify(),
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
+          if (snapshot.data == true) {
             return BottomNavigationScreen();
           } else {
             return LoginScreen();

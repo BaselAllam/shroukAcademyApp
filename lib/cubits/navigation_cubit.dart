@@ -49,6 +49,7 @@ class NavigationCubit extends Cubit<NavigationStates> {
       data.forEach((k, v) {
         _headerImgs.add(v['imgUrl']);
       });
+      print('Header IMGS=>>>>>>> $_headerImgs');
       emit(GetHeaderImgsSuccessState());
     } catch (e) {
       emit(GetHeaderImgsErrorState());

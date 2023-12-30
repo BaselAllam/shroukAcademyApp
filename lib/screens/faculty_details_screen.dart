@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_services/screens/apply_screen.dart';
+import 'package:i_services/shared/responsive.dart';
 import 'package:i_services/shared/shared_theme/shared_colors.dart';
 import 'package:i_services/shared/shared_theme/shared_fonts.dart';
 
@@ -68,8 +69,9 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
   }
 
   aboutFacultySection() {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      height: MediaQuery.of(context).size.height / 2.9,
+      height: size.height / responsiveFacultyDetailsAbout(size.height),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         color: SharedColors.whiteColor,
@@ -110,12 +112,14 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
   }
 
   departmentSection() {
+    Size size = MediaQuery.of(context).size;
+    Size respSize = responsiveFacultyGridImg(size.height);
     return Container(
-      height: MediaQuery.of(context).size.height / 1.15,
+      height: size.height / responsiveFacultyDetailsDepart(size.height),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.1
+          childAspectRatio: responsiveHomeGridItem(size.height),
         ),
         physics: NeverScrollableScrollPhysics(),
         itemCount: widget.data['departments'].length,
@@ -129,7 +133,7 @@ class _FacultyDetailsScreenState extends State<FacultyDetailsScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.network(widget.data['departments'][index]['depImg']!, height: 75.0, width: 75.0),
+                Image.network(widget.data['departments'][index]['depImg']!, height: respSize.height, width: respSize.width),
                 Text(widget.data['departments'][index]['depName']!, textAlign: TextAlign.center, style: SharedFonts.miniFontPrimaryColor)
               ],
             ),

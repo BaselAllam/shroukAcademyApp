@@ -29,8 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: ListView(
           children: [
             Container(
               height: 200.0,

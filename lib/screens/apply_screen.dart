@@ -128,32 +128,35 @@ class _ApplyScreenState extends State<ApplyScreen> {
             Container(
               margin: const EdgeInsets.all(8.0),
               alignment: Alignment.bottomCenter,
-              child: BlocBuilder<RequestsCubit, RequestsStates>(
-                builder: (context, state) {
-                  return TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: SharedColors.secondaryColor,
-                      elevation: 0.0,
-                      fixedSize: Size(150.0, 35.0),
-                    ),
-                    child: state is AddRequestLoadingState ? CircularProgressIndicator() : Text('Apply Now', style: SharedFonts.miniFontWhiteColor),
-                    onPressed: state is AddRequestLoadingState ? () {} : () {
-                      if (emailController.text.isEmpty || nameController.text.isEmpty || addressController.text.isEmpty || phoneController.text.isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(snack('Some Fields Required!', Colors.red));
-                      } else {
-                        BlocProvider.of<RequestsCubit>(context).addRequest(
-                          {
-                            'email': emailController.text,
-                            'address': addressController.text,
-                            'number': phoneController.text,
-                            'name': nameController.text
-                          }
-                        );
-                        // ScaffoldMessenger.of(context).showSnackBar(snack('Applied Success!', Colors.green));
-                      }
-                    },
-                  );
+              child: BlocListener<RequestsCubit, RequestsStates>(
+                listener: (context, state) {
+                  if (state is SuccessAddRequestState) {                  
+                    ScaffoldMessenger.of(context).showSnackBar(snack('Applied Success!', Colors.green));
+                    return Navigator.pop(context);
+                  }
                 },
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: SharedColors.secondaryColor,
+                    elevation: 0.0,
+                    fixedSize: Size(150.0, 35.0),
+                  ),
+                  child: Text('Apply Now', style: SharedFonts.miniFontWhiteColor),
+                  onPressed: () {
+                    if (emailController.text.isEmpty || nameController.text.isEmpty || addressController.text.isEmpty || phoneController.text.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(snack('Some Fields Required!', Colors.red));
+                    } else {
+                      BlocProvider.of<RequestsCubit>(context).addRequest(
+                        {
+                          'email': emailController.text,
+                          'address': addressController.text,
+                          'number': phoneController.text,
+                          'name': nameController.text
+                        }
+                      );
+                    }
+                  },
+                ),
               ),
             ),
           ],

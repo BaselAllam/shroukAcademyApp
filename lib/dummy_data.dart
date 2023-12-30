@@ -205,3 +205,18 @@ List<Map<String, String>> departmentData = [
 
 
 */
+
+
+/*
+
+  
+
+
+   Approach                    Top Of AppTree            NotifyLisenter           Rebuild Child Widget           ConvertController to ( Cubit, Model )
+   Scoped Model  ===>          ScopedModel               notifyListener           ScopedModelDescendent          Model
+   Provider      ===>          Provider | MultiProvider  notifyListener           Provider (read, watch, select) ChangeNotifierProvider
+   BLoC          ===>          BlocProvider | Multi      emit                     BlocBuilder | BlocListener     Cubit
+
+
+
+*/

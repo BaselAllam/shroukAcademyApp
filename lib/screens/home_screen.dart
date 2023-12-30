@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_services/cubits/navigation_cubit.dart';
 import 'package:i_services/screens/faculty_details_screen.dart';
+import 'package:i_services/shared/responsive.dart';
 import 'package:i_services/shared/shared_theme/shared_colors.dart';
 import 'package:i_services/shared/shared_theme/shared_fonts.dart';
 import 'package:i_services/states/navigation_states.dart';
@@ -107,8 +108,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget facultySection() {
+    Size size = MediaQuery.of(context).size;
+    Size respSize = responsiveFacultyGridImg(size.height);
     return Container(
-      height: MediaQuery.of(context).size.height - 440,
+      height: size.height - responsiveHomeGrid(size.height),
       child: BlocBuilder<NavigationCubit, NavigationStates>(
         builder: (context, state) {
           if (state is GetFacultyLoadingState) {
@@ -119,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return GridView(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.0,
+                childAspectRatio: responsiveHomeGridItem(size.height),
               ),
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
@@ -139,8 +142,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       children: [
                         Container(
-                          height: 115.0,
-                          width: 145,
+                          height: respSize.height,
+                          width: respSize.width,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage(BlocProvider.of<NavigationCubit>(context).faculities[i]['facultyImg']!),
